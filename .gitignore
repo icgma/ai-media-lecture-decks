@@ -1,0 +1,13 @@
+# Secret passphrase — never commit
+.env
+
+# Plaintext decks must never enter git. Only ciphertext under dist/decks is
+# published. Source files live outside this repo; these guards catch accidents.
+*.pptx
+*.pdf
+*.mp4
+第*周-*.html
+
+node_modules/
+.DS_Store
+Thumbs.db

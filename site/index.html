@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>课件库 · AI 驱动传媒制作</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+  <main id="gate" class="gate">
+    <div class="frame">
+      <p class="eyebrow">AI 驱动传媒制作 · 16 讲</p>
+      <h1>课件库</h1>
+      <p class="lede">内容以密文存放。没有口令，只能看到这一页。</p>
+
+      <form id="gate-form" autocomplete="off">
+        <label class="sr-only" for="password">访问口令</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="输入访问口令"
+          autofocus
+          required>
+        <label class="remember">
+          <input type="checkbox" id="remember" checked>
+          <span>本标签页内记住</span>
+        </label>
+        <button type="submit" id="gate-btn">打开课件</button>
+        <p id="gate-error" class="error" hidden>口令不正确</p>
+      </form>
+    </div>
+  </main>
+
+  <main id="app" class="app" hidden>
+    <header class="top">
+      <div>
+        <p class="eyebrow">AI 驱动传媒制作</p>
+        <h1>课件库</h1>
+      </div>
+      <button type="button" id="lock" class="text-btn">锁定</button>
+    </header>
+
+    <p class="hint">选择一讲，在新标签页中全屏播放。方向键翻页。</p>
+    <div id="cards" class="cards"></div>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

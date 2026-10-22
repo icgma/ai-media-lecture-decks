@@ -1,0 +1,14 @@
+{
+  "name": "ai-media-lecture-decks",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Encrypted 16-week lecture decks for AI-driven media production, served as static GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
