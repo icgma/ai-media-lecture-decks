@@ -1,6 +1,9 @@
 # Secret passphrase — never commit
 .env
 
+# Superseded output location
+dist/
+
 # Plaintext decks must never enter git. Only ciphertext under dist/decks is
 # published. Source files live outside this repo; these guards catch accidents.
 *.pptx

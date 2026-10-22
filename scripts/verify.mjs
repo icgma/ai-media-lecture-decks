@@ -5,7 +5,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const DIST = join(ROOT, "dist");
+const DIST = join(ROOT, "docs");
 const SRC = resolve(
   process.argv[2] ||
     process.env.DECKS_SOURCE ||

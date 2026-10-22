@@ -13,10 +13,10 @@ https://icgma.github.io/ai-media-lecture-decks/
 
 1. `scripts/build.mjs` 读取本机交付目录里的 16 份 HTML。
 2. 用口令经 PBKDF2-SHA256（210,000 次）派生一把主密钥，再对每份文件用
-   独立的 AES-256-GCM IV 加密，输出 `dist/decks/wNN.bin`。
-3. 目录清单（周次、字节数）同样加密为 `dist/decks/index.bin`，避免标题泄露。
-4. `dist/` 提交并发布；浏览器端 `site/js/app.js` 用同一口令派生密钥，
-   解密后在新建标签页里渲染课件。
+   独立的 AES-256-GCM IV 加密，输出 `docs/decks/wNN.bin`。
+3. 目录清单（周次、字节数）同样加密为 `docs/decks/index.bin`，避免标题泄露。
+4. `docs/` 提交并由 GitHub Pages 发布（Pages 只接受 `/` 或 `/docs`）；
+   浏览器端 `site/js/app.js` 用同一口令派生密钥，解密后在新建标签页里渲染课件。
 
 密钥只存在于当前标签页的 `sessionStorage`，关掉即失效。
 
@@ -24,7 +24,7 @@ https://icgma.github.io/ai-media-lecture-decks/
 
 ```bash
 cp .env.example .env      # 填入 DECKS_PASSWORD
-npm run build             # 生成 dist/
+npm run build             # 生成 docs/
 node scripts/verify.mjs   # 逐字节比对解密结果与原文件
 npm run serve             # http://localhost:8080/
 ```
@@ -43,7 +43,7 @@ node scripts/e2e-check.mjs "<口令>"
 
 ## 换口令
 
-改 `.env` 里的 `DECKS_PASSWORD`，重新 `npm run build` 并提交 `dist/`。
+改 `.env` 里的 `DECKS_PASSWORD`，重新 `npm run build` 并提交 `docs/`。
 旧密文随即失效。
 
 ## 边界

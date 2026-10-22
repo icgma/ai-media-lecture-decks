@@ -5,7 +5,7 @@ import { dirname, extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(
-  process.argv[3] || join(dirname(fileURLToPath(import.meta.url)), "..", "dist"),
+  process.argv[3] || join(dirname(fileURLToPath(import.meta.url)), "..", "docs"),
 );
 const PORT = Number(process.argv[2] || process.env.PORT || 8080);
 

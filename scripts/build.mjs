@@ -16,7 +16,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_DIR = join(ROOT, "site");
-const DIST_DIR = join(ROOT, "dist");
+// GitHub Pages only serves from / or /docs, so the publishable output is docs/.
+const DIST_DIR = join(ROOT, "docs");
 const PAYLOAD_DIR = "decks";
 
 // 210k iterations matches skill-kit; the master key is derived once so the
@@ -111,7 +112,7 @@ writeFileSync(join(DIST_DIR, "robots.txt"), "User-agent: *\nDisallow: /\n");
 
 const totalMb = manifest.reduce((n, d) => n + d.bytes, 0) / 1024 / 1024;
 console.log(
-  `Encrypted ${manifest.length} deck(s), ${totalMb.toFixed(1)} MB plaintext -> dist/`,
+  `Encrypted ${manifest.length} deck(s), ${totalMb.toFixed(1)} MB plaintext -> docs/`,
 );
 console.log(`Source: ${srcDir}`);
 
